@@ -1,0 +1,19 @@
+<div layout="column" flex layout-fill >
+  <header-frame></header-frame>
+  <section class="documents-frame" layout="column" layout-padding md-theme="lilyWhite">
+    <div layout="row" layout-align="center center">
+            <md-card-content flex layout="row" layout-wrap class="msg-detail-attachments">
+              <md-card flex="30" layout="row" layout-align="start center" class="msg-detail-attachment-item" ng-repeat="attachment in ctrl.documents" title="{{ attachment.filename }}">
+                <span class="msg-detail-attachment-name">{{ attachment.filename }}</span>
+                <span class="msg-detail-attachment-size">({{ attachment.size }})</span>
+                <download ng-click="ctrl.downloadAttachment(attachment)"></download>
+              </md-card>
+            </md-card-content>
+      </div>
+    </section>
+</div>
+<style>
+md-grid-tile-header figcaption  {
+  width:100%;
+}
+</style>
